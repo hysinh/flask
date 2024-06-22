@@ -7,12 +7,6 @@ app = Flask(__name__)  # creates an instance of the Flask class and stores in va
 def index(): #creates a function called "index" which returns the string "hello world"
     return render_template("index.html")
 
-@app.route("/about")
-def about():
-    return render_template("about.html")
-
-
-
 #__main__ is the name of the default module in Python
 if __name__ == "__main__":  #references the built-in variable - if both are equal, we will run our app with the following arguments
     app.run(
