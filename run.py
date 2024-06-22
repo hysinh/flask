@@ -1,11 +1,17 @@
 import os
-from flask import Flask #importing Flask class
+from flask import Flask, render_template #importing Flask class
 
 app = Flask(__name__)  # creates an instance of the Flask class and stores in variable called "app", the first argment of the Flask class = name of the application's module (our package) "__name__" is a built-in Python variable
 
 @app.route("/") #use the route decorator to tell Flask what URL should trigger the function that follows
 def index(): #creates a function called "index" which returns the string "hello world"
-    return "Hello, World"
+    return render_template("index.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+
 
 #__main__ is the name of the default module in Python
 if __name__ == "__main__":  #references the built-in variable - if both are equal, we will run our app with the following arguments
